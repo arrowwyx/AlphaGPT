@@ -20,7 +20,8 @@ class AlphaEngine:
             lord_num_iterations: Number of Newton-Schulz iterations per step
         """
         self.loader = CryptoDataLoader()
-        self.loader.load_data()
+        #self.loader.load_data()
+        self.loader.load_data_from_csv(r"c:\Users\user\OneDrive\Desktop\crypto_quant\okx_BTCUSDT_1min_data.csv", address="BTCUSDT", time_col="Datetime", default_liquidity=1e6, default_fdv=1e9)
         
         self.model = AlphaGPT().to(ModelConfig.DEVICE)
         
